@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Winter Slices</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- 可选：更好看的现代字体 Inter（也可删去） -->
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .project-container {
+      display: flex;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 50px auto 0 auto;
+      padding: 40px 24px;
+      color: #e0e0e0;
+      align-items: flex-start;
+    }
+    .project-media {
+      flex: 1.2;
+      background: #232323;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+    }
+    .project-media video, .project-media img {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      border-radius: 14px;
+      background: #232323;
+      box-shadow: 0 0 18px #0008;
+    }
+    .project-info {
+      flex: 1;
+      min-width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .project-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 2em;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #e4e4e4;
+    }
+    .project-title {
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.2em;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .project-date {
+      color: #c8c8c8;
+      font-size: 0.8em;
+      font-weight: 400;
+      margin-left: 16px;
+      min-width: 120px;
+      text-align: right;
+    }
+    .project-desc {
+      font-size: 1.12em;
+      line-height: 1.7;
+      color: #d2d2d2;
+      margin: 10px 0 18px 0;
+      background: #191919;
+      border-radius: 10px;
+      padding: 22px;
+    }
+    .project-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 18px;
+    }
+    .project-list li {
+      margin-bottom: 8px;
+      font-size: 1.03em;
+      position: relative;
+      padding-left: 25px;
+    }
+    .project-list li::before {
+      content: '・';
+      color: #fff;
+      position: absolute;
+      left: 0;
+      font-size: 1.14em;
+      font-weight: 700;
+    }
+    @media (max-width: 900px) {
+      .project-container { flex-direction: column; gap: 32px; }
+      .project-media { min-height: 220px; }
+      .project-title-row { font-size: 1.25em; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="project-container">
+    <!-- 左边：视频（或图片，如果没有视频可以删掉下面的 video，放 img） -->
+    <div class="project-media">
+      <iframe width="100%" height="420"
+    src="https://www.youtube.com/embed/xr4uz43QrUY?si=8BLPzhUhfZEU4srv"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- 右边：信息区 -->
+    <div class="project-info">
+      <div class="project-title-row">
+        <span class="project-title">Unseen</span>
+        <span class="project-date">2025</span>
+      </div>
+      <div class="project-desc">
+        <p>
+          This sound-based experiment focuses on unseen vibrations and explores how sound propagates through materials,
+          undergoes translation and interacts with perceptual systems.
+        </p>
+        <p>
+          In this piece, audio signals from a synthesizer and microphone are routed into a transducer attached to a thunder
+          sheet, transforming the metal surface into a resonant medium. Sound no longer relies solely on air as its carrier;
+          instead, it travels through the object itself as physical vibration, activating both auditory and tactile perception 
+          in space.
+        </p>
+        <p>
+          During the performance, the performer intervenes by placing different materials onto the surfaces of the thunder sheet
+          or microphone, or by physically deforming the metal to disrupt the natural flow of sound. These actions alter the behavior 
+          of resonance, destabilize the sonic structure, and activate a dynamic, nonlinear feedback system.
+        </p>
+      </div>
+      <ul class="project-list">
+        <li>Performer: Biin Jin, Yilin Yang</li>
+        <li>
+          <span class="nowrap">
+            Arrangement: Thunder Sheet, Voice, Analog Electronics, and Transducer
+          </span>
+        </li>
+        <li>Duration: 10'</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
