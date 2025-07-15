@@ -1,10 +1,105 @@
-<!-- work1.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Winter Slices</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- 可选：更好看的现代字体 Inter（也可删去） -->
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .project-container {
+      display: flex;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 50px auto 0 auto;
+      padding: 40px 24px;
+      color: #e0e0e0;
+      align-items: flex-start;
+    }
+    .project-media {
+      flex: 1.2;
+      background: #232323;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+    }
+    .project-media video, .project-media img {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      border-radius: 14px;
+      background: #232323;
+      box-shadow: 0 0 18px #0008;
+    }
+    .project-info {
+      flex: 1;
+      min-width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .project-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 2em;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #e4e4e4;
+    }
+    .project-title {
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.2em;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .project-date {
+      color: #c8c8c8;
+      font-size: 0.8em;
+      font-weight: 400;
+      margin-left: 16px;
+      min-width: 120px;
+      text-align: right;
+    }
+    .project-desc {
+      font-size: 1.12em;
+      line-height: 1.7;
+      color: #d2d2d2;
+      margin: 10px 0 18px 0;
+      background: #191919;
+      border-radius: 10px;
+      padding: 22px;
+    }
+    .project-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 18px;
+    }
+    .project-list li {
+      margin-bottom: 8px;
+      font-size: 1.03em;
+      position: relative;
+      padding-left: 25px;
+    }
+    .project-list li::before {
+      content: '✓';
+      color: #fff;
+      position: absolute;
+      left: 0;
+      font-size: 1.14em;
+      font-weight: 700;
+    }
+    @media (max-width: 900px) {
+      .project-container { flex-direction: column; gap: 32px; }
+      .project-media { min-height: 220px; }
+      .project-title-row { font-size: 1.25em; }
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -15,32 +110,41 @@
       <li><a href="#">Instagram</a></li>
     </ul>
   </nav>
-  <main class="work-detail">
-    <h1>Winter Slices</h1>
-    <img src="images/work1.jpg" alt="作品1" class="detail-image" />
-    
-    <!-- 如果有视频：本地视频或 YouTube 外链 -->
-    <video controls width="700">
-      <source src="videos/work1.mp4" type="video/mp4">
-      您的浏览器不支持 video 标签。
-    </video>
-    <!-- 或者嵌入YouTube -->
-    <!--
-    <iframe width="700" height="400" src="https://www.youtube.com/embed/视频ID" frameborder="0" allowfullscreen></iframe>
-    -->
 
-    <div class="description">
-      <p>
-        Winter Slices is an improvised duo for saxophone and synthesizer, enhanced with fixed media elements sampled
-from Birgitta Flick’s Circular Composition III. This work unfolds as a spontaneous dialogue between live instruments,
-interwoven with pre-recorded sonic fragments that evoke the memories of a long-vanished winter. It feels as if we
-have wandered into a realm, where the cold wind rushes relentlessly, snow falls endlessly, and solitary footsteps
-echo through frosty air. The performance also includes an interactive video component. Sensors capture the
-performer’s movements in real time, translating kinetic data into dynamic visual transformations. This integration of
-sound and image creates a fluid, immersive environment where live improvisation, fixed media, and responsive
-visuals merge into a cohesive narrative that bridges the realms of memory and the present.
-      </p>
+  <div class="project-container">
+    <!-- 左边：视频（或图片，如果没有视频可以删掉下面的 video，放 img） -->
+    <div class="project-media">
+      <video controls poster="images/winter_slices.jpg">
+        <source src="videos/work1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- 如果你只想放图片，直接用：
+      <img src="images/work1.jpg" alt="Winter Slices" />
+      -->
     </div>
-  </main>
+
+    <!-- 右边：信息区 -->
+    <div class="project-info">
+      <div class="project-title-row">
+        <span class="project-title">Winter Slices</span>
+        <span class="project-date">2023–11–05</span>
+      </div>
+      <div class="project-desc">
+        Winter Slices is an improvised duo for saxophone and synthesizer, enhanced with fixed media elements sampled
+        from Birgitta Flick’s Circular Composition III. This work unfolds as a spontaneous dialogue between live instruments,
+        interwoven with pre-recorded sonic fragments that evoke the memories of a long-vanished winter. It feels as if we
+        have wandered into a realm, where the cold wind rushes relentlessly, snow falls endlessly, and solitary footsteps
+        echo through frosty air. The performance also includes an interactive video component. Sensors capture the
+        performer’s movements in real time, translating kinetic data into dynamic visual transformations. This integration of
+        sound and image creates a fluid, immersive environment where live improvisation, fixed media, and responsive
+        visuals merge into a cohesive narrative that bridges the realms of memory and the present.
+      </div>
+      <ul class="project-list">
+        <li>Performer: Yilin Yang</li>
+        <li>Improvisation & fixed media</li>
+        <li>Duration: 8'30"</li>
+      </ul>
+    </div>
+  </div>
 </body>
 </html>
