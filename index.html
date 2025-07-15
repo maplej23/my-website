@@ -5,6 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yilin YANG</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery-item {
+      background: #222;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-width: 0;
+      min-height: 0;
+      height: 100%;
+      box-shadow: 0 2px 18px #0004;
+      transition: transform 0.18s;
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 8px 32px #0007;
+    }
+    .thumb-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 65%;  /* 16:10比例，或56.25%为16:9，70%略高一点 */
+      background: #000;
+      overflow: hidden;
+    }
+    .thumb-container img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .caption {
+      color: #ccc;
+      font-size: 1.04em;
+      padding: 14px 12px 18px 12px;
+      text-align: center;
+      background: transparent;
+      letter-spacing: 0.04em;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    
+    /* 保持gallery布局不变 */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 300px;
+      gap: 30px;
+      padding: 0 30px 30px 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .gallery-item.large {
+      grid-row: span 2;
+      grid-column: span 1;
+    }
+    @media (max-width: 1000px) {
+      .gallery { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2em; }
+      .gallery {
+        grid-template-columns: 1fr;
+        padding: 0 10px 20px 10px;
+        gap: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -18,24 +89,36 @@
     <h1>Yilin YANG</h1>
   </header>
   <main class="gallery">
+    <!-- 作品1：YouTube缩略图，带播放按钮 -->
     <a href="winter_slices.html" class="gallery-item">
-      <div class="yt-thumb-container">
+      <div class="thumb-container">
         <img src="https://img.youtube.com/vi/xr4uz43QrUY/hqdefault.jpg" alt="Winter Slices" />
         <span class="play-btn">&#9658;</span>
       </div>
       <span class="caption">Winter Slices</span>
-   </a>
-    <div class="gallery-item large">
-      <div class="img-placeholder"></div>
-    </div>
-    <div class="gallery-item">
-      <div class="img-placeholder"></div>
-      <span>Quisque Vita Est</span>
-    </div>
-    <div class="gallery-item">
-      <div class="img-placeholder"></div>
-    </div>
-    <!-- 可以继续添加作品项 -->
+    </a>
+    <!-- 作品2示例：图片作品，可直接改图片地址 -->
+    <a href="#" class="gallery-item large">
+      <div class="thumb-container">
+        <img src="images/your_image2.jpg" alt="作品2" />
+      </div>
+      <span class="caption">Quisque Vita Est</span>
+    </a>
+    <!-- 作品3：空的可加图 -->
+    <a href="#" class="gallery-item">
+      <div class="thumb-container">
+        <img src="images/your_image3.jpg" alt="作品3" />
+      </div>
+      <span class="caption">Another Work</span>
+    </a>
+    <!-- 作品4示例： -->
+    <a href="#" class="gallery-item">
+      <div class="thumb-container">
+        <img src="images/your_image4.jpg" alt="作品4" />
+      </div>
+      <span class="caption">More Coming</span>
+    </a>
+    <!-- 依次继续添加... -->
   </main>
 </body>
 </html>
