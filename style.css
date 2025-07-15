@@ -62,7 +62,56 @@ header h1 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  min-width: 0;
+  min-height: 0;
+  height: 100%; /* 新增，确保撑满格子 */
 }
+
+.yt-thumb-container {
+  position: relative;
+  width: 100%;
+  flex: 1 1 0%;
+  height: 0;
+  padding-bottom: 65%; /* 16:10比例，可调成56.25%更接近16:9 */
+  background: #000;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.yt-thumb-container img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.play-btn {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 56px;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 4px 16px #000;
+  pointer-events: none;
+  user-select: none;
+}
+
+.caption {
+  color: #ccc;
+  font-size: 1em;
+  padding: 12px;
+  text-align: center;
+  background: transparent;
+}
+
+/* 保证 gallery-item 下 caption 不会太高，也不遮住图片 */
+.gallery-item {
+  padding-bottom: 0;
+}
+
+/* 其它原有样式保持不变 */
 
 .gallery-item .img-placeholder {
   flex: 1;
