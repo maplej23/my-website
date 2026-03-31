@@ -16,6 +16,22 @@
       padding: 0 40px;
     }
 
+    /* 顶部返回按钮美化：去掉绝对定位，改成普通排版，让它乖乖待在标题上方 */
+    .back-nav {
+      margin-bottom: 40px;
+    }
+    .back-nav a {
+      color: #888;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+    .back-nav a:hover {
+      color: #fff;
+    }
+
     /* 顶级标题：最亮，纯白 */
     .concert-title {
       font-size: 3em;
@@ -66,7 +82,7 @@
     }
     
     .track-list a:hover .track-name {
-      color: #ffffff; /* 悬停时曲名变量 */
+      color: #ffffff; /* 悬停时曲名变亮 */
     }
 
     /* 配置/乐器：稍暗，有次要信息的感觉 */
@@ -84,33 +100,16 @@
       font-weight: 400;
       letter-spacing: 1px;
     }
-    
-    /* 顶部返回按钮美化 */
-    .back-nav {
-      position: absolute;
-      top: 40px;
-      left: 40px;
-    }
-    .back-nav a {
-      color: #888;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 0.9em;
-      letter-spacing: 1px;
-      transition: color 0.3s;
-    }
-    .back-nav a:hover {
-      color: #fff;
-    }
   </style>
 </head>
 <body>
   
-  <nav class="back-nav">
-    <a href="work.html" class="page-transition">&larr; Back to Work</a>
-  </nav>
-
   <main class="concert-container">
+    
+    <nav class="back-nav">
+      <a href="work.html" class="page-transition">&larr; Back to Work</a>
+    </nav>
+
     <h1 class="concert-title">List</h1>
     
     <ul class="track-list">
@@ -126,7 +125,7 @@
       </li>
 
       <li>
-        <a href="concert/unseen.html" class="page-transition">
+        <a href="concert/to_caress.html" class="page-transition">
           <div class="track-info">
             <span class="track-name">To Caress, To Be Consumed</span>
             <span class="track-setup">for Italian organ with analog live electronics</span>
@@ -136,7 +135,7 @@
       </li>
 
       <li>
-        <a href="concert/unseen.html" class="page-transition">
+        <a href="concert/the_sigh.html" class="page-transition">
           <div class="track-info">
             <span class="track-name">The Sigh</span>
             <span class="track-setup">for multi-channel fixed media and live visuals</span>
