@@ -35,7 +35,7 @@ body.home-page { overflow: hidden; }
 .info-panel {
   position: absolute; top: 40px; left: 40px; z-index: 100;
 }
-.info-panel h1 { font-size: 2em; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px; }
+.info-panel h1 { font-size: 2em; letter-spacing: 2px; text-transform: none; margin-bottom: 30px; }
 .contact-info p { font-size: 0.8em; margin-bottom: 15px; color: var(--text-secondary); }
 
 .scene {
