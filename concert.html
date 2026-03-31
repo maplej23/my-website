@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yilin YANG - Concert</title>
+  <title>CONCERT - Yilin YANG</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* 针对列表页的专属样式 */
-    body { overflow: auto; } /* 允许上下滚动 */
+    /* 针对列表页的专属排版 */
+    body { overflow: auto; } 
     
     .concert-container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 100px auto;
       padding: 0 40px;
     }
 
+    /* 顶级标题：最亮，纯白 */
     .concert-title {
       font-size: 3em;
-      margin-bottom: 50px;
+      margin-bottom: 60px;
       border-bottom: 1px solid #333;
       padding-bottom: 20px;
+      color: #ffffff; 
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .track-list {
@@ -28,57 +33,141 @@
     }
 
     .track-list li {
-      margin-bottom: 30px;
+      margin-bottom: 45px; /* 加大每首歌之间的呼吸感 */
     }
 
+    /* 列表项的整体布局 */
     .track-list a {
       text-decoration: none;
-      color: #ccc;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      font-size: 1.5em;
-      transition: color 0.3s, transform 0.3s;
+      align-items: center; /* 让左右两边垂直居中对齐 */
+      transition: transform 0.4s ease;
     }
 
     .track-list a:hover {
-      color: #fff;
-      transform: translateX(10px); /* 悬停时整个标题向右微微滑动 */
+      transform: translateX(15px); /* 悬停右滑效果 */
     }
 
+    /* 左侧文本容器：让曲名和配置上下排列 */
+    .track-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px; /* 曲名和配置之间的间距 */
+    }
+
+    /* 曲名：次亮 */
+    .track-name {
+      font-size: 1.6em;
+      color: #e0e0e0; 
+      font-weight: 500;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+    
+    .track-list a:hover .track-name {
+      color: #ffffff; /* 悬停时曲名变量 */
+    }
+
+    /* 配置/乐器：稍暗，有次要信息的感觉 */
+    .track-setup {
+      font-size: 0.9em;
+      color: #999999;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    /* 年份：中等亮度 */
     .track-year {
-      font-size: 0.6em;
-      color: #666;
+      font-size: 1.1em;
+      color: #bbbbbb;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    
+    /* 顶部返回按钮美化 */
+    .back-nav {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+    }
+    .back-nav a {
+      color: #888;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+    .back-nav a:hover {
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <nav style="padding: 20px 40px; display: flex; gap: 20px;">
-    <a href="work.html" style="color: #fff; text-decoration: none;">&larr; Back to Work</a>
+  
+  <nav class="back-nav">
+    <a href="work.html" class="page-transition">&larr; Back to Work</a>
   </nav>
 
   <main class="concert-container">
     <h1 class="concert-title">List</h1>
     
     <ul class="track-list">
+      
       <li>
-        <a href="concert/unseen.html">
-          <span>Unseen</span>
-          <span class="track-year">2025</span>
-        </a>
-      <li>
-        <a href="concert/Overflow.html">
-          <span>Overflow</span>
+        <a href="concert/unseen.html" class="page-transition">
+          <div class="track-info">
+            <span class="track-name">Unseen</span>
+            <span class="track-setup">for thunder sheet, voice, analog electronics, and transducer</span>
+          </div>
           <span class="track-year">2025</span>
         </a>
       </li>
+
       <li>
-        <a href="concert/winter_slices.html">
-          <span>Winter Slices</span>
+        <a href="concert/unseen.html" class="page-transition">
+          <div class="track-info">
+            <span class="track-name">To Caress, To Be Consumed</span>
+            <span class="track-setup">for Italian organ with analog live electronics</span>
+          </div>
+          <span class="track-year">2025</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="concert/unseen.html" class="page-transition">
+          <div class="track-info">
+            <span class="track-name">The Sigh</span>
+            <span class="track-setup">for multi-channel fixed media and live visuals</span>
+          </div>
+          <span class="track-year">2025</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="concert/Overflow.html" class="page-transition">
+          <div class="track-info">
+            <span class="track-name">Overflow</span>
+            <span class="track-setup">for Mackie 802VLZ4 & Make Noise Strega</span>
+          </div>
+          <span class="track-year">2025</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="concert/winter_slices.html" class="page-transition">
+          <div class="track-info">
+            <span class="track-name">Winter Slices</span>
+            <span class="track-setup">for tenor saxophone, modular synthesizer, electronics and Live-Video</span>
+          </div>
           <span class="track-year">2024</span>
         </a>
       </li>
-      </ul>
+
+    </ul>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
