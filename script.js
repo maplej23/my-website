@@ -1,23 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 找到所有带有 page-transition 类名的链接，以及所有的返回按钮
-    const links = document.querySelectorAll('.page-transition, .card, .back-link');
+    // 监听所有的跳转链接（包含了我们新加的 bottom-back-link）
+    const links = document.querySelectorAll('.page-transition, .card, .back-link, .bottom-back-link');
     
     links.forEach(link => {
         link.addEventListener('click', function(e) {
-            // 如果链接是空的（比如 #），就不执行跳转动画
             if (this.getAttribute('href') === '#' || this.target === '_blank') return;
             
-            // 阻止浏览器默认的瞬间跳转
             e.preventDefault(); 
             const targetUrl = this.href;
             
-            // 给整个网页加上淡出的 CSS 类
+            // 给网页加上变黑淡出的动画
             document.body.classList.add('fade-out');
             
-            // 等待 500 毫秒（淡出动画播完）后，再真正跳转到下一页
             setTimeout(() => {
                 window.location.href = targetUrl;
             }, 500);
         });
     });
+});
+
+// ====== 新增：修复浏览器后退键黑屏问题 (BFCache 唤醒) ======
+window.addEventListener('pageshow', (event) => {
+    // event.persisted 表示页面是从浏览器的缓存中恢复的（比如按了后退键）
+    if (event.persisted) {
+        // 强行移除 fade-out 类，让页面重新亮起来！
+        document.body.classList.remove('fade-out');
+    }
 });
