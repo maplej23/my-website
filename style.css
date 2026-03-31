@@ -217,3 +217,25 @@ body.fade-out {
   0% { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(-15px); }
 }
+
+/* 1. 解除配置信息的大写限制，保留你输入的原本格式 */
+.meta-value {
+  text-transform: none; 
+  color: #eeeeee; /* 稍微提亮一点点，让它跟灰色的 label 区分开 */
+}
+
+/* 2. 为底部的 Back to Home 按钮设置样式 */
+.bottom-back-link {
+  display: block; /* 独占一行 */
+  margin-top: 80px; /* 和上面的正文拉开距离 */
+  margin-bottom: 20px;
+  font-size: 0.9em;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+.bottom-back-link:hover {
+  color: #ffffff;
+}
