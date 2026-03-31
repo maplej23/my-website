@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yilin YANG - Works</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* 针对列表页的专属样式 */
+    body { overflow: auto; } /* 允许上下滚动 */
+    
+    .works-container {
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 0 40px;
+    }
+
+    .works-title {
+      font-size: 3em;
+      margin-bottom: 50px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 20px;
+    }
+
+    .track-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .track-list li {
+      margin-bottom: 30px;
+    }
+
+    .track-list a {
+      text-decoration: none;
+      color: #ccc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.5em;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .track-list a:hover {
+      color: #fff;
+      transform: translateX(10px); /* 悬停时整个标题向右微微滑动 */
+    }
+
+    .track-year {
+      font-size: 0.6em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <nav style="padding: 20px 40px; display: flex; gap: 20px;">
+    <a href="index.html" style="color: #fff; text-decoration: none;">&larr; Back to Home</a>
+  </nav>
+
+  <main class="works-container">
+    <h1 class="works-title">Selected Works</h1>
+    
+    <ul class="track-list">
+      <li>
+        <a href="works/Overflow.html">
+          <span>Overflow</span>
+          <span class="track-year">2025</span>
+        </a>
+      </li>
+      <li>
+        <a href="works/winter_slices.html">
+          <span>Winter Slices</span>
+          <span class="track-year">2024</span>
+        </a>
+      </li>
+      </ul>
+  </main>
+</body>
+</html>
