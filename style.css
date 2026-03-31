@@ -35,6 +35,7 @@ body.home-page { overflow: hidden; }
 .info-panel {
   position: absolute; top: 40px; left: 40px; z-index: 100;
 }
+/* 这里已经解除了全大写限制 */
 .info-panel h1 { font-size: 2em; letter-spacing: 2px; text-transform: none; margin-bottom: 30px; }
 .contact-info p { font-size: 0.8em; margin-bottom: 15px; color: var(--text-secondary); }
 
@@ -61,7 +62,6 @@ body.home-page { overflow: hidden; }
 
 
 /* --- B. Works List Page (works.html) --- */
-/* 这里定义一个简单的简约列表，用于 Works 页面 */
 .works-container {
   max-width: 900px; margin: 120px auto; padding: 0 40px;
 }
@@ -73,9 +73,9 @@ body.home-page { overflow: hidden; }
 .track-year { font-size: 0.6em; color: #555; }
 
 
-/* --- C. Detail Page Layout (Overflow/Winter Slices) (image_1.png inspiration) --- */
+/* --- C. Detail Page Layout (Overflow/Winter Slices) --- */
 .detail-page-container {
-  max-width: 1300px; /* 较宽的布局 */
+  max-width: 1300px; 
   margin: 0 auto;
   padding: 40px 40px 100px 40px;
 }
@@ -91,7 +91,7 @@ body.home-page { overflow: hidden; }
 }
 .back-link:hover { color: var(--text-primary); }
 
-/* 2. Header Area (Structure from image_1.png) */
+/* 2. Header Area */
 .detail-header {
   margin-bottom: 40px;
   border-bottom: 1px solid #222;
@@ -99,14 +99,14 @@ body.home-page { overflow: hidden; }
 }
 .track-counter {
   font-size: 0.9em;
-  color: #666; /* 较暗的序号 */
+  color: #666; 
   margin-bottom: 15px;
   text-transform: uppercase;
 }
 .detail-title {
-  font-size: 3.5em; /* 非常巨大、醒目的标题 */
+  font-size: 3.5em; 
   font-weight: 800;
-  letter-spacing: -1px; /* 紧凑字距增加视觉冲击 */
+  letter-spacing: -1px; 
   text-transform: uppercase;
   margin-bottom: 25px;
 }
@@ -115,7 +115,7 @@ body.home-page { overflow: hidden; }
   gap: 40px;
   font-size: 0.85em;
   color: var(--text-secondary);
-  text-transform: uppercase;
+  text-transform: uppercase; /* 修复了之前的拼写错误 */
   letter-spacing: 1px;
 }
 .meta-item { display: flex; flex-direction: column; }
@@ -125,26 +125,24 @@ body.home-page { overflow: hidden; }
 .detail-media {
   width: 100%;
   margin-bottom: 60px;
-  background-color: #111; /* 媒体加载前的背景色 */
+  background-color: #111; 
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
-/* 针对 iframe (如 YouTube) */
 .detail-media iframe {
   width: 100%;
-  height: 650px; /* 较高的默认高度 */
+  height: 650px; 
   border: none;
   display: block;
 }
-/* 针对本地 video 标签 */
 .detail-media video {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* 4. Description Area (USER REQUESTED: Minimalist/Multi-column for long text) */
+/* 4. Description Area */
 .detail-desc-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -153,15 +151,14 @@ body.home-page { overflow: hidden; }
   font-size: 1.1em;
   line-height: 1.8;
   color: var(--text-secondary);
-  /* 简约主义处理长文本：双栏排版，像艺术展解说词 */
   columns: 2;
   column-gap: 50px;
-  text-align: justify; /* 两端对齐，更整齐 */
+  text-align: justify; 
 }
 .detail-desc p {
   margin-top: 0;
   margin-bottom: 20px;
-  -webkit-column-break-inside: avoid; /* 避免段落被强行切断到第二栏 */
+  -webkit-column-break-inside: avoid; 
           page-break-inside: avoid;
                break-inside: avoid;
 }
@@ -170,35 +167,31 @@ body.home-page { overflow: hidden; }
 @media (max-width: 1024px) {
   .detail-title { font-size: 2.8em; }
   .detail-media iframe { height: 450px; }
-  .detail-desc { columns: 1; text-align: left; } /* 小屏幕还原单栏 */
+  .detail-desc { columns: 1; text-align: left; } 
 }
 @media (max-width: 768px) {
   .detail-title { font-size: 2em; }
   .detail-meta { flex-wrap: wrap; gap: 20px; }
   .detail-media iframe { height: 300px; }
-  .scene { padding-top: 150px; } /* 为主页移动端让出顶部空间 */
+  .scene { padding-top: 150px; } 
 }
 
 /* =========================================
    新增：Work 页面专属莫兰迪抽卡色
    ========================================= */
 .card.concert-card {
-  /* 莫兰迪雾霾蓝渐变 */
   background-image: linear-gradient(135deg, #798A96, #4A5A66); 
   color: #fff;
 }
 
 .card.study-card {
-  /* 莫兰迪大地灰渐变 */
   background-image: linear-gradient(135deg, #B5AC9E, #857D70); 
   color: #fff;
 }
 
-
 /* =========================================
    新增：网页渐变切换动画 (Fade Transition)
    ========================================= */
-/* 页面加载时的淡入效果 */
 body {
   animation: fadeIn 0.8s ease-out forwards;
 }
@@ -208,7 +201,6 @@ body {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* 页面离开时的淡出效果（由 JS 触发） */
 body.fade-out {
   animation: fadeOut 0.5s ease-in forwards;
 }
@@ -218,16 +210,19 @@ body.fade-out {
   100% { opacity: 0; transform: translateY(-15px); }
 }
 
-/* 1. 解除配置信息的大写限制，保留你输入的原本格式 */
+/* =========================================
+   新增：小写配置与底部按钮
+   ========================================= */
+/* 1. 解除配置信息的大写限制 */
 .meta-value {
   text-transform: none; 
-  color: #eeeeee; /* 稍微提亮一点点，让它跟灰色的 label 区分开 */
+  color: #eeeeee; 
 }
 
 /* 2. 为底部的 Back to Home 按钮设置样式 */
 .bottom-back-link {
-  display: block; /* 独占一行 */
-  margin-top: 80px; /* 和上面的正文拉开距离 */
+  display: block; 
+  margin-top: 80px; 
   margin-bottom: 20px;
   font-size: 0.9em;
   color: #888888;
